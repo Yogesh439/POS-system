@@ -1,6 +1,5 @@
 import React from "react";
-// import "./login.css";
-import { Button } from "../../components/Button";
+import { Button } from "../../components/button";
 import { Formik, Form, Field } from "formik";
 import img from "../../image/login.png";
 import { Link } from "react-router-dom";
@@ -42,11 +41,10 @@ const Login = () => {
                     requestOptions
                   );
                   console.log(response);
-
                   const data = await response.json();
                   console.log(data);
                   if (response.status === 200) {
-                    alert(data.msg);
+                    // alert(data.msg);
                     navigate("/dashBoard");
                   } else {
                     alert(data.error);
