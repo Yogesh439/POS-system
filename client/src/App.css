@@ -138,7 +138,6 @@ span a:hover {
 }
 
 .logo:hover {
-  color: white;
   cursor: pointer;
 }
 
@@ -153,6 +152,7 @@ nav {
   justify-content: space-between;
   position: fixed;
   overflow: auto;
+  border-radius: 0;
 }
 
 .nav_list_right a {

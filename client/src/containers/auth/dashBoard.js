@@ -1,8 +1,9 @@
 import React from "react";
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import Avatar from "@mui/material/Avatar";
-import image from "../../image/profile.jpg";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import AccountMenu from "../../components/accountMenu";
+
 
 const DashBoard = () => {
   const [date, setDate] = useState(new Date().toLocaleDateString());
@@ -30,24 +31,24 @@ const DashBoard = () => {
 
           <ol className="nav_list_right">
             <li>
-              <a href="/dashBoard">Home</a>
+              <Link to="/dashBoard">Home</Link>
             </li>
             <li>
-              <a href=" ">Products</a>
+              <Link to=" ">Products</Link>
             </li>
             <li>
-              <a href=" ">Sales</a>
+              <Link to=" ">Sales</Link>
             </li>
 
             <li>
-              <a href=" ">
+              <Link to=" ">
                 <ShoppingCartOutlined />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href=" ">
-                <Avatar src={image} alt="Profile" />
-              </a>
+              <Link to=" ">
+                <AccountMenu/>
+              </Link>
             </li>
           </ol>
         </nav>

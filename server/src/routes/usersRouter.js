@@ -3,6 +3,7 @@ const { db } = require("../models/Users");
 const router = express.Router();
 const Users = require("../models/Users");
 const bcrypt = require("bcrypt");
+
 router.post("/register", async (req, res) => {
   try {
     const hash = await bcrypt.hashSync(req.body.password, 10);

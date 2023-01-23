@@ -37,7 +37,7 @@ const Login = () => {
                 };
                 try {
                   const response = await fetch(
-                    "http://localhost:3005/login",
+                    "http://localhost:3006/login",
                     requestOptions
                   );
                   console.log(response);

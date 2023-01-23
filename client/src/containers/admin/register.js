@@ -14,15 +14,13 @@ const Register = () => {
       .required("Required"),
 
     address: Yup.string()
-      .min(5, "Too Short!")
+      .min(3, "Too Short!")
       .max(100, "Too Long!")
       .required("Required"),
 
     email: Yup.string().email("Invalid email").required("Required"),
 
     phone: Yup.number().required("Required"),
-
-    
 
     password: Yup.string()
       .min(5, "Too Short!")
@@ -34,7 +32,6 @@ const Register = () => {
       .max(100, "Too Long!")
       .required("Required")
       .oneOf([Yup.ref("password"), null], "Passwords must match"),
-
   });
   const navigate = useNavigate();
   return (
@@ -62,7 +59,7 @@ const Register = () => {
                 };
                 try {
                   const response = await fetch(
-                    "http://localhost:3005/register",
+                    "http://localhost:3006/register",
                     requestOptions
                   );
                   const data = await response.json();
@@ -129,7 +126,7 @@ const Register = () => {
                       </div>
                     ) : null}
                   </div>
-                  
+
                   <CustomButton name="Submit" type="submit" />
                 </Form>
               )}
@@ -138,7 +135,7 @@ const Register = () => {
           <div className="right-side">
             <div className="img-box">
               <img src={img} alt="Logo" />
-              <div className="">
+              <div>
                 <span>
                   Already have an account <Link to="/">Login...</Link>
                 </span>
